@@ -87,6 +87,7 @@ public class guiCreator implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         JButton button = (JButton) (e.getSource());
         String text = button.getText();
+
         if (text.equals("Search")){
             info.setText(getData(prev));
         }
@@ -121,6 +122,10 @@ public class guiCreator implements ActionListener{
 
     private String getData(String category){
         String enteredName = field.getText();
+        if (enteredName.contains(" ")){
+            int num = enteredName.indexOf(" ");
+            enteredName = enteredName.substring(0, num);
+        }
         String response = client.makeAPICall(enteredName, category);
         String str = "";
         if (category.equals("planets")){str = client.parsePlanetData(response);}
