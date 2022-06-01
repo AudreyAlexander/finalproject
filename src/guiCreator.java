@@ -126,6 +126,7 @@ public class guiCreator implements ActionListener{
             int num = enteredName.indexOf(" ");
             enteredName = enteredName.substring(0, num);
         }
+        enteredName = enteredName.toLowerCase();
         String response = client.makeAPICall(enteredName, category);
         String str = "";
         if (category.equals("planets")){str = client.parsePlanetData(response);}
