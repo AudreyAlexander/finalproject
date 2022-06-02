@@ -102,6 +102,7 @@ public class guiCreator implements ActionListener{
         JPanel top = new JPanel();
         newFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         newFrame.setBackground(Color.BLACK);
+        field.setText("");
         info.setText("\n\n\n\n\n\n\n");
         JLabel entryText = new JLabel("Enter a name: ");
         JButton search = new JButton("Search");
